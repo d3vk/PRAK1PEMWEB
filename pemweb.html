@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h2>First Webpage</h2>
+    <p>My first webpage</p>
+
+    <p id="demo"></p>
+
+    <div id="tambah"></div>
+    <div id="kurang"></div>
+    <div id="mod"></div>
+
+    <button id="dom" onclick="dom()">PRODI</button>
+
+    <script>
+        document.getElementById("demo").innerHTML = 5 + 6;
+
+        var length = 2;
+        var width = 3;
+
+        var tambah = length + width;
+        var mod = length % width;
+        var kurang = length - width;
+
+        document.getElementById("tambah").innerHTML = tambah;
+        document.getElementById("kurang").innerHTML = kurang;
+        document.getElementById("mod").innerHTML = mod;
+        
+        var UNS = ["fmipa", "fkip", "ft", "fk"];
+        UNS.push("fp");
+        console.log(UNS);
+
+        var x = UNS.length;
+        var y = UNS.sort;
+        console.log(x);
+        console.log(y);
+
+        var person = {
+            firstName : "h",
+            lastName : "r",
+            age : "18",
+            eyeColor : "bl",
+            fullName : function () {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+
+        console.log(person.firstName);
+
+        function myFunction(p1, p2) {
+            return p1*p2;
+        }
+
+        console.log(myFunction(12312, 123));
+
+        var text = "";
+        for (i = 0; i < 5; i++) {
+            text += "the number is " + i + "\n";
+        }
+
+        console.log(text);
+
+        var text2 = "";
+        while (i < 10) {
+            text2 += "the number is " + i + "\n";
+            i++;
+        }
+
+        console.log(text2);
+
+        var text3 = "";
+        do {
+            text3 += "the number is " + i + "\n";
+            i++;
+        } while (i <= 13);
+
+        console.log(text3);
+
+        function dom() {
+            document.getElementById("dom").innerHTML = "S1 Informatika";
+        }
+
+        function validate() {
+            var validasi = document.forms["myform"]["fname"].value;
+            if (validasi == null | validasi == "") {
+                alert("first name harus diisi");
+                return false;
+            }
+        }
+
+    </script>
+
+    <form name="myform" action="https://google.com" onsubmit="return validate()" method="post">
+        first name : <input type="text" name="fname">
+        <input type="submit" value="submit">
+    </form>
+
+</body>
+</html>
